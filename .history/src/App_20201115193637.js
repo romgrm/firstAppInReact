@@ -19,19 +19,13 @@ class App extends Component {
             }),
         })
     }
-    /** quand l'utilisateur rentrera les données on pourra les envoyer au formulaire pour qu'il les stockent grâce à cette fonction  */
-    handleSubmit = (personnages) => {
-        this.setState({personnages: [...this.state.personnages, personnages]})
-      }
-
-
-    /** on envoie les données de 'personnages' ainsi que la fonction 'supprimerPersonnages' et la fonction 'handleSubmit' (envoie des données) à notre Table */
+    /** on envoie les données de 'personnages' ainsi que la fonction 'supprimerPersonnages' à notre Table */
     render() {
         const {personnages} = this.state
         return (
             <div className="Container">
               <Table dataPerso={personnages} suppPerso={this.supprimerPersonnages}/>  
-              <Form handleSubmit={this.handleSubmit}/>
+              <Form />
             </div> 
           )
         
